@@ -1,0 +1,3 @@
+## Some of the Exercises aren't really related to Object Oriented Programming
+
+### It's just JavaScript Questions that i am trying to get to know the language better and practice JavaScript Interview Questions, no more no less. Although i'll be adding some DSA and OOP specific questions very soon. The questions to the solutions are at the top of each file. Feel free to test this basic questions and check if my solutions were good or not 💪🏾
