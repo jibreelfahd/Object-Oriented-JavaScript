@@ -12,8 +12,9 @@ Write a function that is going create a deck of cards and also perfom operations
 //  create a method that draws one of the card from its position
 //  reset the card
 
+
 class Cards {
-  constructor(suit, rank) {
+  constructor(private suit: string, private rank: string) {
     this.suit = suit;
     this.rank = rank;
   }
@@ -24,6 +25,10 @@ class Cards {
 }
 
 class Deck {
+  suit: string[];
+  rank: string[];
+  cards: Cards[];
+
   constructor() {
     this.suit = ["Heart", "Spades", "Diamonds", "Clubs"];
     this.rank = ["2", "3", "4", "5", "6", "7", "8", "9", "10","Ace", "Jack", "Queen", "King"];
@@ -59,6 +64,6 @@ class Deck {
 
 const deckOne = new Deck();
 deckOne.shuffle()
-console.log(deckOne.draw().toString())
-console.log(deckOne.draw().toString())
+console.log(deckOne.draw()!.toString())
+console.log(deckOne.draw()!.toString())
 console.log(deckOne.cards.length)

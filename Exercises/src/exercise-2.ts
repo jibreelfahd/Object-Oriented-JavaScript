@@ -4,7 +4,10 @@ Create a class called PersonAccount. It has firstname, lastname, incomes, expens
 
 */
 class PersonAccount {
-  constructor(firstname, lastname) {
+  incomes: number[];
+  expenses: number[];
+
+  constructor(public firstname: string, public lastname: string) {
     this.firstname = firstname;
     this.lastname = lastname;
     this.incomes = [];
@@ -29,7 +32,7 @@ class PersonAccount {
     return sum;
   }
 
-  totalIncome(description) {
+  totalIncome(description: string) {
     const date = new Date();
 
     console.log(
@@ -37,7 +40,7 @@ class PersonAccount {
     );
   }
 
-  totalExpense(description) {
+  totalExpense(description: string) {
     const date = new Date();
 
     console.log(
@@ -56,13 +59,13 @@ class PersonAccount {
     );
   }
 
-  addIncome(incomeOne, incomeTwo, incomeThree) {
+  addIncome(incomeOne: number, incomeTwo: number, incomeThree: number) {
     this.incomes.push(incomeOne, incomeTwo, incomeThree);
     console.log(
       `Incomes added are: ${incomeOne}, ${incomeTwo}, ${incomeThree}`
     );
   }
-  addExpense(expenseOne, expenseTwo, expenseThree) {
+  addExpense(expenseOne: number, expenseTwo: number, expenseThree: number) {
     this.expenses.push(expenseOne, expenseTwo, expenseThree);
     console.log(
       `Expenses added are: ${expenseOne}, ${expenseTwo}, ${expenseThree}`

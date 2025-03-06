@@ -5,7 +5,7 @@
 */
 
 // first question
-const numbers = [5, 6, 14, 12, 9, 20];
+const numbers: number[] = [5, 6, 14, 12, 9, 20];
 
 const findLargestNumber = () => {
   let largest = numbers[0];
@@ -22,9 +22,10 @@ console.log(findLargestNumber());
 //second question
 const nestedArray = [1, [2, [3, 4]]];
 
+type NestedArray = number | NestedArray[];
 // using recursion
-const flattenArray = (arr) => {
-  let result = [];
+const flattenArray = (arr: NestedArray[]) => {
+  let result: number[] = [];
 
   for (const item of arr) {
     if (Array.isArray(item)) {
@@ -39,24 +40,24 @@ const flattenArray = (arr) => {
 console.log(flattenArray(nestedArray));
 
 //third question
-const cards = ['Jack', 8, 2, 2, 6, 'King', 5, 3, 'Queen', 'King', 'Queen'];
+const cards: (string | number)[] = ['Jack', 8, 2, 2, 6, 'King', 5, 3, 'Queen', 'King', 'Queen'];
 
 const sortString = () => {
-  let stringArray = [];
-  let numberArray = [];
+  let stringArray: string[] = [];
+  let numberArray: number[] = [];
 
   for (let i = 0; i < cards.length; i++) {
-    if (typeof(cards[i]) === 'string') {
-      stringArray.push(cards[i]);
-    } else if(typeof(cards[i]) === 'number') {
-      numberArray.push(cards[i]);
+    if (typeof cards[i] === 'string') {
+      stringArray.push((cards[i] as string));
+    } else if(typeof cards[i] === 'number') {
+      numberArray.push((cards[i] as number));
     }
   }
 
   const sortedString = stringArray.sort();
   const sortedNumbers = numberArray.sort((a, b) => a - b);
   
-  const newArray = sortedString.concat(sortedNumbers)
+  const newArray: (string | number)[] = [...sortedString, ...sortedNumbers];
   return newArray;
 };
 

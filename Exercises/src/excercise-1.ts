@@ -6,7 +6,7 @@
 */
 
 class Animal {
-  constructor(name, age, color, legs) {
+  constructor(public name: string, public age: number, public color: string, public legs?: number) {
     this.name = name;
     this.age = age;
     this.color = color;
@@ -21,7 +21,7 @@ class Animal {
 }
 
 class Dog extends Animal {
-  constructor(name, age, color) {
+  constructor(public name: string, public age: number, public color: string, public bark?: string) {
     super(name, age, color);
     this.legs = 4;
     this.bark = "I bark anytime i need food";
@@ -35,7 +35,7 @@ class Dog extends Animal {
 }
 
 class Cat extends Animal {
-  constructor(name, age, color) {
+  constructor(name: string, age: number, color: string, public meow?: string) {
     super(name, age, color);
     this.legs = 4;
     this.meow = "My meow is cute";
